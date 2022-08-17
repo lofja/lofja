@@ -1,0 +1,108 @@
+//By lofja
+//Every character is anyChar
+const anyChar = [
+    '0','1','2','3','4','5',
+    '6','7','8','9','-','_',
+    '+','~','`','*','^','&',
+    '$','a','b','c','d','e',
+    'f','g','h','i','j',
+    'k','l','m','n','o',
+    'p','q','r','s','t',
+    'u','v','w','x','y','z',
+    'A','B','C','D','E',
+    'F','G','H','I','J',
+    'K','L','M','N','O',
+    'P','Q','R','S','T',
+    'U','V','W','X','Y','Z',
+    '0','1','2','3','4','5',
+    '6','7','8','9','-','_',
+    '+','~','`','*','^','&',
+    '$'
+];
+const anyNum = [
+    '0','1','2','3','4','5',
+    '6','7','8','9'
+];
+//num gen
+const numA = anyChar;
+const numB = anyNum;
+const numC = anyChar;
+const numD = anyNum;
+const numE = anyChar
+const numF = anyNum;
+const numG = anyChar;
+const numH = anyNum;
+//letter gen
+const letterA = anyChar;
+const letterB = anyChar;
+const letterC = anyChar;
+const letterD = anyChar;
+const letterE = anyChar;
+const letterF = anyChar;
+const letterG = anyChar;
+const letterH = anyChar;
+const letterI = anyChar;
+const letterJ = anyChar;
+const letterK = anyChar;
+const letterL = anyChar;
+const letterM = anyChar;
+const letterN = anyChar;
+const letterO = anyChar;
+const letterP = anyChar;
+
+//RandomNum Gen
+let indexQ = Math.floor(Math.random() * numA.length);
+let indexR = Math.floor(Math.random() * numB.length);
+let indexS = Math.floor(Math.random() * numC.length);
+let indexT = Math.floor(Math.random() * numD.length);
+let indexU = Math.floor(Math.random() * numE.length);
+let indexV = Math.floor(Math.random() * numF.length);
+let indexW = Math.floor(Math.random() * numG.length);
+let indexX = Math.floor(Math.random() * numH.length);
+
+//RandomChar Gen
+let indexA = Math.floor(Math.random() * letterA.length);
+let indexB = Math.floor(Math.random() * letterB.length);
+let indexC = Math.floor(Math.random() * letterC.length);
+let indexD = Math.floor(Math.random() * letterD.length);
+let indexE = Math.floor(Math.random() * letterE.length);
+let indexF = Math.floor(Math.random() * letterF.length);
+let indexG = Math.floor(Math.random() * letterG.length);
+let indexH = Math.floor(Math.random() * letterH.length);
+let indexI = Math.floor(Math.random() * letterI.length);
+let indexJ = Math.floor(Math.random() * letterJ.length);
+let indexK = Math.floor(Math.random() * letterK.length);
+let indexL = Math.floor(Math.random() * letterL.length);
+let indexM = Math.floor(Math.random() * letterM.length);
+let indexN = Math.floor(Math.random() * letterN.length);
+let indexO = Math.floor(Math.random() * letterO.length);
+let indexP = Math.floor(Math.random() * letterP.length);
+
+let password = 
+    letterA[indexA]+letterB[indexB]+letterC[indexC]+letterD[indexD]+letterE[indexE]+
+    letterF[indexF]+letterG[indexG]+letterH[indexH]+letterI[indexI]+letterJ[indexJ]+
+    letterK[indexK]+letterL[indexL]+letterM[indexM]+letterN[indexN]+letterO[indexO]+letterP[indexP]
+
+let usernameAuto = 
+    `username${numA[indexQ]}${numB[indexR]}${numC[indexS]}${numD[indexT]}${numE[indexU]}${numF[indexV]}${numG[indexW]}${numH[indexX]}`
+
+    const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question('What site is this for? ', function(site) {
+    rl.question('Do you want an auto-generated username? yes/no ', function(userQ) {
+        if (userQ === 'no') {
+            rl.question('What is your username? ', function(username) {
+                console.log(`${site}: ${username}:${password}`)
+                rl.close();
+            });
+        } else {
+            console.log(`${site}: ${usernameAuto}:${password}`)
+            rl.close();
+        } 
+      
+    });
+});
